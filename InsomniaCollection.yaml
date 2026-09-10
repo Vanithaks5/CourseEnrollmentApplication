@@ -1,0 +1,255 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My first collection
+meta:
+  id: wrk_79469f8b03d04fdea550ae86a6d1dcd0
+  created: 1788943475952
+  modified: 1788943475952
+  description: ""
+collection:
+  - name: HDFC Course Enrollment System
+    meta:
+      id: fld_49b5c68901944bbfbdc3027de01d9cde
+      created: 1788943585413
+      modified: 1788943585413
+      sortKey: -1788943585413
+      description: ""
+    children:
+      - url: http://localhost:8080/courses
+        name: Create Course
+        meta:
+          id: req_fac87a5e00654cf68292820112e6854c
+          created: 1788943605542
+          modified: 1788943679823
+          isPrivate: false
+          description: ""
+          sortKey: -1788943605542
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "courseName": "Java Full Stack",
+              "trainerName": "John Doe",
+              "durationInDays": 30,
+              "maxCapacity": 2,
+              "fees": 5000.0
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/courses
+        name: Input Validation
+        meta:
+          id: req_17ded609086d4bff95717da32fa33970
+          created: 1788943696145
+          modified: 1788943777124
+          isPrivate: false
+          description: ""
+          sortKey: -1788943696145
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "courseName": "Python Core",
+              "trainerName": "Jane Doe",
+              "durationInDays": 0,
+              "maxCapacity": 5,
+              "fees": -100.0
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/enrollments
+        name: Employee Enrollment
+        meta:
+          id: req_37a24b9686654342a55ec9ea2b482b25
+          created: 1788943795112
+          modified: 1788943835323
+          isPrivate: false
+          description: ""
+          sortKey: -1788943795112
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "employeeId": 101,
+              "employeeName": "Ratan",
+              "courseId": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/enrollments
+        name: Block Duplicate Enrollment
+        meta:
+          id: req_667e626301244716bd5e335d0e3f4ebe
+          created: 1788943862729
+          modified: 1788943913922
+          isPrivate: false
+          description: ""
+          sortKey: -1788943862729
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "employeeId": 101,
+              "employeeName": "Ratan",
+              "courseId": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/enrollments
+        name: Enroll emp
+        meta:
+          id: req_54dc5085df6842bebec77d408ebcb4bc
+          created: 1788943947381
+          modified: 1788943991625
+          isPrivate: false
+          description: ""
+          sortKey: -1788943947381
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "employeeId": 102,
+              "employeeName": "Anish",
+              "courseId": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/enrollments
+        name: Capacity Overflow
+        meta:
+          id: req_219962baaf9e4ca2820a4db4469d2c79
+          created: 1788944074466
+          modified: 1788944121197
+          isPrivate: false
+          description: ""
+          sortKey: -1788944074466
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "employeeId": 103,
+              "employeeName": "Kiran",
+              "courseId": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/enrollments
+        name: Non Existent course
+        meta:
+          id: req_a638da3425df4d98bc13f832a7146154
+          created: 1788944156062
+          modified: 1788944204405
+          isPrivate: false
+          description: ""
+          sortKey: -1788944156062
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "employeeId": 104,
+              "employeeName": "Suresh",
+              "courseId": 999
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/analytics/most-popular-course
+        name: New Request
+        meta:
+          id: req_a0a345bd00754f598519fa98e9093597
+          created: 1788944216730
+          modified: 1788944219718
+          isPrivate: false
+          description: ""
+          sortKey: -1788944216730
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_2e17a20b13bf0ea66de47135c6eabe2a0febe458
+    created: 1788943475953
+    modified: 1788943475953
+environments:
+  name: Base Environment
+  meta:
+    id: env_2e17a20b13bf0ea66de47135c6eabe2a0febe458
+    created: 1788943475952
+    modified: 1788943475952
+    isPrivate: false
